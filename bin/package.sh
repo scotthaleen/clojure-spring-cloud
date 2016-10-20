@@ -2,7 +2,7 @@ lein clean
 lein compile
 
 # build BOOT-INF
-# configured in project.clj "target/spring-boot/lib"
+# configured in project.clj "target/spring-boot/BOOT-INF/lib"
 lein libdir
 #mkdir -p target/spring-boot/BOOT-INF
 cp -R target/classes target/spring-boot/BOOT-INF/classes
