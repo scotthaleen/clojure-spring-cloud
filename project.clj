@@ -6,7 +6,7 @@
                   :exclusions [org.springframework.boot/spring-boot-starter-tomcat]]
                  [org.springframework.boot/spring-boot-starter-jetty "1.4.1.RELEASE"]
                  [org.springframework.boot/spring-boot-starter-actuator "1.4.1.RELEASE"]
-                 ;;[org.springframework.boot/spring-boot-loader "1.2.3.RELEASE"]
+                 ;;[org.springframework.boot/spring-boot-loader "1.4.1.RELEASE"]
                  ]
   :main org.springframework.boot.loader.JarLauncher
   :manifest {"Start-Class" "spring.cloud.App"
