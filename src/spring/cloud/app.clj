@@ -1,4 +1,5 @@
 (ns spring.cloud.app
+  (:require [clojure.string :as s])
   (:import
    [java.util Arrays]
    [org.springframework.boot SpringApplication]
@@ -31,9 +32,24 @@
 
 ;; }
 
+(defn print-clojure []
+  (letfn [(fn-str [& args] (s/join \newline args))]
+    (print (fn-str
+            ""
+            "   ____ _       _                "
+            "  / ___| | ___ (_)_   _ _ __ ___ "
+            " | |   | |/ _ \\| | | | | '__/ _ \\ "
+            " | |___| | (_) | | |_| | | |  __/  "
+            "  \\____|_|\\___// |\\__,_|_|  \\___| "
+            "              |__/                "
+            ""
+            ""))
+
+    ))
+
 
 (defn -main [& args]
-  (println "-- Clojure --")
+  (print-clojure)
   (let [ctx (SpringApplication/run ^Object spring.cloud.App (into-array String args))]
     (doseq [bean (sort (.getBeanDefinitionNames ctx))]
       (println bean))))
