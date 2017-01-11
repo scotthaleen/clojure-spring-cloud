@@ -1,5 +1,17 @@
+#!/usr/bin/env bash
+
+set -e
+
+
 lein clean
 lein compile
+
+JAR=$( a=(dist/spring-boot-loader-*.RELEASE.jar); printf "${a[-1]}" )
+
+if [[ ! -f ${JAR} ]]; then
+    wget -P dist/ http://central.maven.org/maven2/org/springframework/boot/spring-boot-loader/1.4.3.RELEASE/spring-boot-loader-1.4.3.RELEASE.jar    
+fi
+
 
 # build BOOT-INF
 # configured in project.clj "target/spring-boot/BOOT-INF/lib"
@@ -9,7 +21,7 @@ cp -R target/classes target/spring-boot/BOOT-INF/classes
 
 cd target/spring-boot
 
-jar xvf ../../dist/spring-boot-loader-1.4.1.RELEASE.jar org
+jar xvf ../../dist/spring-boot-loader-*.RELEASE.jar org
 
 cd -
 
