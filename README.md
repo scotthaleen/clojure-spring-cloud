@@ -2,7 +2,7 @@
 
 Proof of concept Clojure Implementation of [Spring Boot Getting Started](https://spring.io/guides/gs/spring-boot/)
 
-This project was created against 'Spring 1.4.3.RELEASE'
+This project was created against 'Spring 1.5.4.RELEASE'
 
 [Spring Boot](http://projects.spring.io/spring-boot/) uses its own JarLauncher `org.springframework.boot.loader.JarLauncher` Maven and Gradle have plugins to package the jar for you, Leiningen does not. So I had to create a custom bash script to make do. 
 
