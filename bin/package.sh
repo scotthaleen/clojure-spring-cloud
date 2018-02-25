@@ -6,10 +6,11 @@ set -e
 lein clean
 lein compile
 
-JAR=$( a=(dist/spring-boot-loader-*.RELEASE.jar); printf "${a[-1]}" )
+JAR=$( a=(dist/spring-boot-loader-*.jar); printf "${a[-1]}" )
 
 if [[ ! -f ${JAR} ]]; then
-    wget -P dist/ http://central.maven.org/maven2/org/springframework/boot/spring-boot-loader/1.4.3.RELEASE/spring-boot-loader-1.4.3.RELEASE.jar    
+    wget -P dist/ http://repo.spring.io/milestone/org/springframework/boot/spring-boot-loader/2.0.0.RC1/spring-boot-loader-2.0.0.RC1.jar
+
 fi
 
 
@@ -21,7 +22,7 @@ cp -R target/classes target/spring-boot/BOOT-INF/classes
 
 cd target/spring-boot
 
-jar xvf ../../dist/spring-boot-loader-*.RELEASE.jar org
+jar xvf ../../dist/spring-boot-loader-*.jar org
 
 cd -
 

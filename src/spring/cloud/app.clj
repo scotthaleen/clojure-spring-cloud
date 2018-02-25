@@ -4,16 +4,18 @@
    [java.util Arrays]
    [org.springframework.boot SpringApplication]
    [org.springframework.boot.autoconfigure SpringBootApplication]
-   [org.springframework.context ApplicationContext])
+   [org.springframework.context ApplicationContext]
+   [org.slf4j Logger LoggerFactory])
   (:gen-class
    :name ^{org.springframework.boot.autoconfigure.SpringBootApplication {}} spring.cloud.App))
-
 
 ;; import java.util.Arrays;
 
 ;; import org.springframework.boot.SpringApplication;
 ;; import org.springframework.boot.autoconfigure.SpringBootApplication;
 ;; import org.springframework.context.ApplicationContext;
+
+;; private static final Logger LOGGER = LoggerFactory.getLogger(MyServiceImpl.class);
 
 ;; @SpringBootApplication
 ;; public class Application {
@@ -32,9 +34,13 @@
 
 ;; }
 
+(set! *warn-on-reflection* true)
+
+(def ^org.slf4j.Logger logger (LoggerFactory/getLogger spring.cloud.App))
+
 (defn print-clojure []
   (letfn [(fn-str [& args] (s/join \newline args))]
-    (print (fn-str
+    (.info logger (fn-str
             ""
             "   ____ _       _                "
             "  / ___| | ___ (_)_   _ _ __ ___ "
@@ -50,6 +56,8 @@
 
 (defn -main [& args]
   (print-clojure)
-  (let [ctx (SpringApplication/run ^Object spring.cloud.App (into-array String args))]
+  (let [^ApplicationContext ctx (SpringApplication/run
+                                  ^Object spring.cloud.App
+                                  ^"[Ljava.lang.String;" (into-array String args))]
     (doseq [bean (sort (.getBeanDefinitionNames ctx))]
-      (println bean))))
+      (.info logger bean))))
