@@ -9,7 +9,7 @@ lein compile
 JAR=$( a=(dist/spring-boot-loader-*.jar); printf "${a[-1]}" )
 
 if [[ ! -f ${JAR} ]]; then
-    wget -P dist/ http://repo.spring.io/milestone/org/springframework/boot/spring-boot-loader/2.0.0.RC1/spring-boot-loader-2.0.0.RC1.jar
+    wget -P dist/ http://repo.spring.io/milestone/org/springframework/boot/spring-boot-loader/2.1.2.RELEASE/spring-boot-loader-2.1.2.RELEASE.jar
 
 fi
 

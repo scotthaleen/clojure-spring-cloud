@@ -2,7 +2,7 @@
 
 Proof of concept Clojure Implementation of [Spring Boot Getting Started](https://spring.io/guides/gs/spring-boot/)
 
-This project was created against 'Spring 2.0.0.RC1'
+This project was created against 'Spring 2.1.2.RELEASE'
 
 [Spring Boot](http://projects.spring.io/spring-boot/) uses its own JarLauncher `org.springframework.boot.loader.JarLauncher` Maven and Gradle have plugins to package the jar for you, Leiningen does not. So I had to create a custom bash script to make do.
 
@@ -33,12 +33,19 @@ $ java -jar target/boot.jar
  \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
   '  |____| .__|_| |_|_| |_\__, | / / / /
  =========|_|==============|___/=/_/_/_/
- :: Spring Boot ::            (v2.0.0.RC1)
+ :: Spring Boot ::        (v2.1.2.RELEASE)
 ...
 
 
 $ curl localhost:8080
 Greetings from Clojure!%
+
+$  curl http://localhost:8080/greeting
+{"id":1,"content":"Hello, world!"}%
+
+$ curl "http://localhost:8080/greeting?name=User"
+{"id":2,"content":"Hello, User!"}%
+
 ```
 
 
@@ -50,7 +57,7 @@ Greetings from Clojure!%
 
 ## License
 
-Copyright © 2018
+Copyright © 2019
 
 Distributed under the Eclipse Public License either version 1.0 or (at your option) any later version.
 
