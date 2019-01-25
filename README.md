@@ -4,19 +4,25 @@ Proof of concept Clojure Implementation of [Spring Boot Getting Started](https:/
 
 This project was created against 'Spring 2.1.2.RELEASE'
 
-[Spring Boot](http://projects.spring.io/spring-boot/) uses its own JarLauncher `org.springframework.boot.loader.JarLauncher` Maven and Gradle have plugins to package the jar for you, Leiningen does not. So I had to create a custom bash script to make do.
+## Setup
 
+[Spring Boot](http://projects.spring.io/spring-boot/) uses its own JarLauncher `org.springframework.boot.loader.JarLauncher`
+Maven and Gradle have plugins to package the jar for you, Leiningen does not. So I had to create a custom lein plugin.
+
+Goto - [https://github.com/scotthaleen/lein-spring-boot-jar] and install the plugin locally to compile this project.
+
+Note: for history I have left the custom bash script (`./bin/package.sh`) used before I created the lein plugin.
 
 ## Compile
 
 ```bash
-$ ./bin/package.sh
+lein spring-boot-jar
 ```
 
 ## Run
 
 ```bash
-$ java -jar target/boot.jar
+$ java -jar target/boot-spring-cloud-0.1.0-SNAPSHOT.jar
 16:04:58.120 [main] INFO spring.cloud.App -
    ____ _       _
   / ___| | ___ (_)_   _ _ __ ___
@@ -51,7 +57,7 @@ $ curl "http://localhost:8080/greeting?name=User"
 
 ## TODO
 
-- [ ] Spring Boot Lein Package Plugin
+- [x] Spring Boot Lein Package Plugin
 
 
 
