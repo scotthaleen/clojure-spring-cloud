@@ -2,7 +2,7 @@
 
 Proof of concept Clojure Implementation of [Spring Boot Getting Started](https://spring.io/guides/gs/spring-boot/)
 
-This project was created against 'Spring 2.1.2.RELEASE'
+This project was created against 'Spring 2.1.4.RELEASE'
 
 ## Setup
 
@@ -39,7 +39,7 @@ $ java -jar target/boot-spring-cloud-0.1.0-SNAPSHOT.jar
  \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
   '  |____| .__|_| |_|_| |_\__, | / / / /
  =========|_|==============|___/=/_/_/_/
- :: Spring Boot ::        (v2.1.2.RELEASE)
+ :: Spring Boot ::        (v2.1.4.RELEASE)
 ...
 
 

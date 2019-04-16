@@ -1,4 +1,4 @@
-(def SPRING-BOOT-VERSION "2.1.2.RELEASE")
+(def SPRING-BOOT-VERSION "2.1.4.RELEASE")
 
 (defproject spring-cloud "0.1.0-SNAPSHOT"
   :description ""
@@ -9,7 +9,7 @@
                  [org.springframework.boot/spring-boot-starter-actuator ~SPRING-BOOT-VERSION]]
   :repositories [["spring-milestone" "https://repo.spring.io/milestone"]]
   :main spring.cloud.App
-  :spring-boot-loader-version "2.1.2.RELEASE"
+  :spring-boot-loader-version "2.1.4.RELEASE"
   :plugins [[lein-spring-boot-jar "0.1.0"]
             [lein-ancient "0.6.15"]]
   :aot :all)
