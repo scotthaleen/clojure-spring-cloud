@@ -1,0 +1,17 @@
+name: Clojure CI
+
+on: [push]
+
+jobs:
+  build:
+ 
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v1
+    - uses: actions/checkout@v1
+      with:
+        repository: scotthaleen/lein-spring-boot-jar
+        path: lein-spring-boot-jar
+    - name: test
+      run: ls -la
