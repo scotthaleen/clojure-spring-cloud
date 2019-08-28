@@ -12,7 +12,9 @@ jobs:
     - uses: actions/checkout@v1
       with:
         repository: scotthaleen/lein-spring-boot-jar
-        path: lein-spring-boot-jar
+        path: ./lein-spring-boot-jar
         ref: refs/heads/master
+    - name: pwd
+      run: pwd
     - name: test
       run: ls -la
