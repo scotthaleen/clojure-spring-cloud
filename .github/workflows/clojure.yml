@@ -13,5 +13,6 @@ jobs:
       with:
         repository: scotthaleen/lein-spring-boot-jar
         path: lein-spring-boot-jar
+        refs: refs/heads/master
     - name: test
       run: ls -la
