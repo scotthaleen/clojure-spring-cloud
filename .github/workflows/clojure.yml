@@ -14,6 +14,7 @@ jobs:
         repository: scotthaleen/lein-spring-boot-jar
         path: ./lein-spring-boot-jar
         ref: refs/heads/master
+    - run: cd ..
     - name: pwd
       run: pwd
     - name: test
