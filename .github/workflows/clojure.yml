@@ -15,6 +15,7 @@ jobs:
         path: ./lein-spring-boot-jar
         ref: refs/heads/master
     - name: Install compile dependencies
-      run: cd ../lein-spring-boot-jar && lein install
+      working-directory: ../lein-spring-boot-jar
+      run: lein install
     - name: Compile
       run: lein spring-boot-jar
