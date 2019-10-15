@@ -1,4 +1,6 @@
 # Spring Cloud
+[![Actions Status](https://github.com/scotthaleen/clojure-spring-cloud/workflows/Clojure%20CI/badge.svg)](https://github.com/scotthaleen/clojure-spring-cloud/actions)
+
 
 Proof of concept Clojure Implementation of [Spring Boot Getting Started](https://spring.io/guides/gs/spring-boot/)
 
