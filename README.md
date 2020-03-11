@@ -4,7 +4,7 @@
 
 Proof of concept Clojure Implementation of [Spring Boot Getting Started](https://spring.io/guides/gs/spring-boot/)
 
-This project was created against 'Spring 2.1.4.RELEASE'
+This project was created against 'Spring 2.2.5.RELEASE'
 
 ## Setup
 
@@ -23,8 +23,12 @@ lein spring-boot-jar
 
 ## Run
 
+Choose a profile either `dev` and `prod` and specify it using the
+`spring.profiles.active` parameter. There is no `default` (intentionally) the
+application will fail to start when no valid profile is not specified.
+
 ```bash
-$ java -jar target/boot-spring-cloud-0.1.0-SNAPSHOT.jar
+$ java -jar -Dspring.profiles.active=dev target/boot-spring-cloud-0.1.0-SNAPSHOT.jar
 16:04:58.120 [main] INFO spring.cloud.App -
    ____ _       _
   / ___| | ___ (_)_   _ _ __ ___
@@ -41,7 +45,7 @@ $ java -jar target/boot-spring-cloud-0.1.0-SNAPSHOT.jar
  \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
   '  |____| .__|_| |_|_| |_\__, | / / / /
  =========|_|==============|___/=/_/_/_/
- :: Spring Boot ::        (v2.1.4.RELEASE)
+ :: Spring Boot ::        (v2.2.5.RELEASE)
 ...
 
 
@@ -54,18 +58,23 @@ $  curl http://localhost:8080/greeting
 $ curl "http://localhost:8080/greeting?name=User"
 {"id":2,"content":"Hello, User!"}%
 
+# Depending on -Dspring.profiles.active={dev,prod}
+# Without an active profile the server will fail to start
+$ curl http://localhost:8080/env
+dev
+
 ```
 
 
 ## TODO
 
 - [x] Spring Boot Lein Package Plugin
-
-
+- [x] Spring Profiles [example](src/spring/cloud/components/ienv.clj)
+- [x] Spring Autowiring [magic](src/spring/cloud/rest/env.clj)
 
 ## License
 
-Copyright © 2019
+Copyright © 2020
 
 Distributed under the Eclipse Public License either version 1.0 or (at your option) any later version.
 
