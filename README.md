@@ -72,9 +72,12 @@ dev
 - [x] Spring Profiles [example](src/spring/cloud/components/ienv.clj)
 - [x] Spring Autowiring [magic](src/spring/cloud/rest/env.clj)
 
+## Repobeats
+![Alt](https://repobeats.axiom.co/api/embed/48512415195fc6d1b1e022a40c27d01ac4b7d978.svg "Repobeats analytics image")
+
 ## License
 
-Copyright © 2020
+Copyright © 2022
 
 Distributed under the Eclipse Public License either version 1.0 or (at your option) any later version.
 
