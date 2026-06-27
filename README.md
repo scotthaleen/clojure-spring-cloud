@@ -77,7 +77,7 @@ dev
 
 ## License
 
-Copyright © 2025
+Copyright © 2026
 
 Distributed under the Eclipse Public License either version 1.0 or (at your option) any later version.
 
